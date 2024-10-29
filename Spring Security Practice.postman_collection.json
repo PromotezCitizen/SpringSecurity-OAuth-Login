@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "317d4911-2af5-409a-a14d-dacf45b246ca",
+		"name": "Spring Security Practice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20738150"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Send Verify Code",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{ip}}/api/auth/email/send?email={{email}}",
+							"host": [
+								"{{ip}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"email",
+								"send"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "{{email}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Email Code",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": {{email}},\r\n    \"code\": \"732447\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ip}}/api/auth/email/verify",
+							"host": [
+								"{{ip}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"email",
+								"verify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Craete New User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nickname\": \"{{nickname}}\",\r\n    \"email\": \"{{email}}\",\r\n    \"password\": \"tkdgus4321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ip}}/api/signup",
+							"host": [
+								"{{ip}}"
+							],
+							"path": [
+								"api",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"{{email}}\",\r\n    \"password\": \"tkdgus4321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ip}}/api/login",
+							"host": [
+								"{{ip}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{ip}}/api/logout",
+							"host": [
+								"{{ip}}"
+							],
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ip}}/api/user",
+							"host": [
+								"{{ip}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

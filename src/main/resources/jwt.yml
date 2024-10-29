@@ -1,0 +1,18 @@
+spring:
+  jwt:
+    secret: "yourverylongsecretkeyshouldbe64bytesormore1234567890"
+    bearer: "Bearer "
+    claims:
+      role: role
+      user-id: user_id
+    access:
+      expiration-ms: 3600000
+      header: Authorization-Access
+      subject-name: AccessToken
+      cookie-name: accessToken
+
+    refresh:
+      expiration-ms: 604800000
+      header: Authorization-Refresh
+      subject-name: RefreshToken
+      cookie-name: refreshToken

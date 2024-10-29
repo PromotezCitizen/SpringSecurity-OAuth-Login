@@ -1,0 +1,13 @@
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    # 메일 서비스에서 발급받은 smtp 계정을 입력하면 됩니다.
+    username: {{ email }}
+    password: {{ password }}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true

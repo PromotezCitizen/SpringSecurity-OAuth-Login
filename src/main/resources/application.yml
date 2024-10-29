@@ -1,0 +1,25 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+
+  data:
+    login:
+      default-login-request-url: /api/signin
+    redirect:
+      redirect-url: http://localhost:5173/home
+
+  config:
+    import:
+      - oauth.yml
+      - redis.yml
+      - h2.yml
+      - mail.yml
+      - jwt.yml
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
